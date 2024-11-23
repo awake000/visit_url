@@ -31,7 +31,7 @@ def send_email():
     receiver_email = '3409056090@qq.com'
 
     # 邮件内容
-    text = "推送更新成功" + {response.status_code} + "(如果为200则表示txt更新成功)" + {response_1.status_code} + "(如果为200则表示m3u更新成功)"
+    text = "推送更新成功\n" + {response.status_code} + "(如果为200则表示txt更新成功)\n" + {response_1.status_code} + "(如果为200则表示m3u更新成功)"
     message = MIMEText('text', 'plain', 'utf-8')
     message['From'] = sender_email
     message['To'] = receiver_email
