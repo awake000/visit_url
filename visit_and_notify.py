@@ -5,11 +5,16 @@ from email.mime.text import MIMEText
 
 def visit_url():
     url = "http://www.aikys.top/ys/temp/index.php"
+    url_1 = "http://www.aikys.top/ys/temp/update_m3u.php"
     try:
         response = requests.get(url)
         response.raise_for_status()
         time.sleep(15)  # 停留15秒钟
         return f"Visited URL successfully, Status Code: {response.status_code}"
+        response_1 = requests.get(url)
+        response_1.raise_for_status()
+        time.sleep(15)  # 停留15秒钟
+        return f"Visited URL successfully, Status Code: {response_1.status_code}"
     except requests.RequestException as e:
         return f"Failed to visit URL: {str(e)}"
 
@@ -26,10 +31,11 @@ def send_email():
     receiver_email = '3409056090@qq.com'
 
     # 邮件内容
-    message = MIMEText('推送成功', 'plain', 'utf-8')
+    text = "推送更新成功" + {response.status_code} + "(如果为200则表示txt更新成功)" + {response_1.status_code} + "(如果为200则表示m3u更新成功)"
+    message = MIMEText('text', 'plain', 'utf-8')
     message['From'] = sender_email
     message['To'] = receiver_email
-    message['Subject'] = '定时推送'
+    message['Subject'] = '每天9:30定时推送'
 
     try:
         # 创建SMTP对象并连接到服务器
