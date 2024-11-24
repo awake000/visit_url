@@ -55,7 +55,7 @@ def send_email():
         smtp_obj.quit()
    
 if __name__ == "__main__":
-    result = visit_url()
-    print(result)
-    send_email(result)
+    text = visit_url()
+    print(text)
+    send_email(text)
     print(f"推送成功!")
