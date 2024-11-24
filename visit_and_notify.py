@@ -19,7 +19,7 @@ def visit_url():
             return f"推送更新成功\ntxt更新成功:ok\nm3u更新成功:ok"
         else:
             except requests.RequestException as e:
-            except requests.RequestException as e_1:
+            except requests_1.RequestException as e_1:
             return f"推送更新失败\ntxt更新失败原因:{str(e)}\nm3u更新失败原因:{str(e_1)}"
 
 def send_email(text):
