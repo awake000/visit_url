@@ -32,7 +32,7 @@ def send_email(text):
     receiver_email = '3409056090@qq.com'
 
     # 邮件内容
-    message = MIMEText('text', 'plain', 'utf-8')
+    message = MIMEText(text, 'plain', 'utf-8')
     message['From'] = sender_email
     message['To'] = receiver_email
     message['Subject'] = '每天9:30定时推送'
