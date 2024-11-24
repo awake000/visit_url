@@ -15,7 +15,7 @@ def visit_url():
         response_1.raise_for_status()
         time.sleep(15)  # 停留15秒钟
         #return f"Visited URL successfully, Status Code: {response_1.status_code}"
-        if response.status_code == 200 && response_1.status_code == 200 :
+        if response.status_code == 200 and response_1.status_code == 200 :
             return f"推送更新成功\ntxt更新成功:ok\nm3u更新成功:ok"
         except requests.RequestException as e:
         return f"推送更新失败\ntxt更新成功:false\nm3u更新成功:false\n失败原因:{str(e)}"
