@@ -15,7 +15,7 @@ def visit_url():
         response_1.raise_for_status()
         time.sleep(15)  # 停留15秒钟
         #return f"Visited URL successfully, Status Code: {response_1.status_code}"
-        return f"推送更新成功\n" + response.status_code + "(如果为200则表示txt更新成功)\n" + response_1.status_code + "(如果为200则表示m3u更新成功)"
+        return f"推送更新成功\n{response.status_code}(如果为200则表示txt更新成功)\n{response_1.status_code}(如果为200则表示m3u更新成功)"
     except requests.RequestException as e:
         return f"Failed to visit URL: {str(e)}"
 
