@@ -57,6 +57,6 @@ def send_email():
 if __name__ == "__main__":
     result = visit_url()
     print(result)
-    text = visit_url.text
+    text = visit_url().text
     send_email(text)
     print(f"推送成功!")
