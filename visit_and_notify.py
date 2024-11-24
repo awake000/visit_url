@@ -32,7 +32,6 @@ def send_email(text):
     receiver_email = '3409056090@qq.com'
 
     # 邮件内容
-    text = text
     message = MIMEText('text', 'plain', 'utf-8')
     message['From'] = sender_email
     message['To'] = receiver_email
