@@ -10,12 +10,12 @@ def visit_url():
         response = requests.get(url)
         response.raise_for_status()
         time.sleep(15)  # 停留15秒钟
-        return f"Visited URL successfully, Status Code: {response.status_code}"
+        #return f"Visited URL successfully, Status Code: {response.status_code}"
         response_1 = requests.get(url)
         response_1.raise_for_status()
         time.sleep(15)  # 停留15秒钟
-        return f"Visited URL successfully, Status Code: {response_1.status_code}"
-        text = "推送更新成功\n" + response.status_code + "(如果为200则表示txt更新成功)\n" + response_1.status_code + "(如果为200则表示m3u更新成功)"
+        #return f"Visited URL successfully, Status Code: {response_1.status_code}"
+        return f"推送更新成功\n" + response.status_code + "(如果为200则表示txt更新成功)\n" + response_1.status_code + "(如果为200则表示m3u更新成功)"
     except requests.RequestException as e:
         return f"Failed to visit URL: {str(e)}"
 
@@ -57,6 +57,5 @@ def send_email():
 if __name__ == "__main__":
     result = visit_url()
     print(result)
-    text = visit_url().text
-    send_email(text)
+    send_email(result)
     print(f"推送成功!")
