@@ -19,7 +19,7 @@ def visit_url():
     except requests.RequestException as e:
         return f"Failed to visit URL: {str(e)}"
 
-def send_email():
+def send_email(text):
     # 邮件服务器地址和端口号
     smtp_server = 'smtp.qq.com'
     smtp_port = 465
