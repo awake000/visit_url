@@ -10,12 +10,13 @@ def visit_url():
         response = requests.get(url)
         response.raise_for_status()
         time.sleep(15)  # 停留15秒钟
-        #return f"Visited URL successfully, Status Code: {response.status_code}"
+        #return f"Visited URL successfully, Status Code: {response_1.status_code}"
+    except requests.RequestException as e:
+    try:
         response_1 = requests.get(url)
         response_1.raise_for_status()
         time.sleep(15)  # 停留15秒钟
         #return f"Visited URL successfully, Status Code: {response_1.status_code}"
-    except requests.RequestException as e:
     except requests_1.RequestException as e_1:
     if response.status_code == 200 and response_1.status_code == 200 :
         return f"推送更新成功\ntxt更新成功:ok\nm3u更新成功:ok"
