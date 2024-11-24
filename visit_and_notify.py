@@ -15,6 +15,7 @@ def visit_url():
         response_1.raise_for_status()
         time.sleep(15)  # 停留15秒钟
         return f"Visited URL successfully, Status Code: {response_1.status_code}"
+        text = "推送更新成功\n" + response.status_code + "(如果为200则表示txt更新成功)\n" + response_1.status_code + "(如果为200则表示m3u更新成功)"
     except requests.RequestException as e:
         return f"Failed to visit URL: {str(e)}"
 
@@ -56,6 +57,6 @@ def send_email():
 if __name__ == "__main__":
     result = visit_url()
     print(result)
-    text = "推送更新成功\n" + response.status_code + "(如果为200则表示txt更新成功)\n" + response_1.status_code + "(如果为200则表示m3u更新成功)"
+    text = visit_url.text
     send_email(text)
     print(f"推送成功!")
